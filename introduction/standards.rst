@@ -3,14 +3,14 @@
 Technical Standards
 ===================
 
-iSHARE can be described as an API architecture, which enables all parties involved to engage in direct communication. For interoperability reasons, iSHARE makes use of widely used open standards. Modified implementations of OAuth 2.0 and OpenID Connect 1.0 are used to facilitate an ecosystem in which parties can interact with previously unknown parties. Pre-registration, therefore, is not a prerequisite and this requires alterations to the official standards. Also, for the authentication of parties within an iSHARE context, iSHARE uses PKI and digital certificates relating to all participating parties.
+The iSHARE Trust Framework can be described as an API architecture, which enables all parties involved to engage in direct communication. For interoperability reasons, iSHARE makes use of widely used open standards. Modified implementations of OAuth 2.0 and OpenID Connect 1.0 are used to facilitate an ecosystem in which parties can interact with previously unknown parties. Pre-registration, therefore, is not a prerequisite and this requires alterations to the official standards. Also, for the authentication of parties within an iSHARE context, it uses PKI and digital certificates relating to all participating parties.
 
 API
 ---
 
 An API (Application Programming Interface) is a technical interface, consisting of a set of protocols and data structuring standards ('API specifications') which enables computer systems to directly communicate with each other. Data or services can be directly requested from a server by adhering to the protocols. APIs are used to hide the full complexity of software and make it easy for third parties to use parts of software or data services. APIs are mainly meant for developers to make the creation of new applications depending on other applications easier.
 
-APIs are used in iSHARE to facilitate direct and realtime communication between different parties, eliminating the need for a central platform. iSHARE APIs are designed to be RESTful, and JSON is used for structuring data. iSHARE prescribes caching requirements relating to the use of APIs in various situations.
+APIs are used in  the iSHARE Trust Framework to facilitate direct and realtime communication between different parties, eliminating the need for a central platform. iSHARE APIs are designed to be RESTful, and JSON is used for structuring data. the Framework prescribes caching requirements relating to the use of APIs in various situations.
 
 Caching
 -------
@@ -37,7 +37,7 @@ If a response is cacheable it MUST contain the following headers:
 HTTP(S)
 -------
 
-HyperText Transfer Protocol (Secure) is a communication protocol. iSHARE Scheme communication MUST be carried out over the HTTP protocol, and secured through TLS 1.2 resulting in HTTPS.
+HyperText Transfer Protocol (Secure) is a communication protocol. iSHARE Trust Framework communication MUST be carried out over the HTTP protocol, and secured through TLS 1.2 resulting in HTTPS.
 
 iSHARE authentication/authorisation data is generally transferred in HTTP Headers. These headers can become very large when containing multiple encrypted certificates or JWT's. iSHARE parties SHOULD configure their web servers to accept HTTP headers of 100K length to minimise implementation impact on current services.
 
@@ -120,7 +120,7 @@ TLS
 
 Transport Layer Security (TLS) is a cryptographic protocol that describes communication security for computer networks. It is used to secure the HTTP protocol, resulting in HTTPS.
 
-Within iSHARE, TLS versions up to end of life MUST be used for securing all HTTP communications. Currently this means TLS 1.2 or 1.3. For the most recent version of the specification read `RFC 5246 <https://tools.ietf.org/html/rfc5246>`_.
+Within the iSHARE Trust Framework, TLS versions up to end of life MUST be used for securing all HTTP communications. Currently this means TLS 1.2 or 1.3. For the most recent version of the specification read `RFC 5246 <https://tools.ietf.org/html/rfc5246>`_.
 
 .. _refUTC:
 
@@ -150,4 +150,4 @@ X.509
 In cryptography, X.509 is a standard defining the format of public key certificates. X.509 certificates are used in many Internet protocols, including TLS/SSL, which is the basis for HTTPS, the secure protocol for browsing the web. They are also used in offline applications, like electronic signatures. An X.509 certificate contains a public key and an identity (a hostname, or an organization, or an individual), and is either signed by a certificate authority or self-signed. When a certificate is signed by a trusted certificate authority, or validated by other means, someone holding that certificate can rely on the public key it contains to establish secure communications with another party, or validate documents digitally signed by the corresponding private key. 
 The most recent version of this specification can be found at `tools.ietf.org (RFC 5280) <https://tools.ietf.org/html/rfc5280>`_.
 
-X.509 is used in iSHARE as a standard defining the format of public key certificates.
+X.509 is used in the iSHARE Trust Framework as a standard defining the format of public key certificates.
